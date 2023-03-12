@@ -63,7 +63,7 @@ const index = () => {
               </li>
 
               <li className="option">
-                <input type="range" name="size-slider" id="size-slider" />
+                <input type="range" name="size-slider" id="size-slider" min="1" max="30" />
               </li>
             </ul>
           </div>
@@ -90,7 +90,7 @@ const index = () => {
         </section>
 
         <section className="drawing-board">
-          <canvas></canvas>
+          <canvas width={810} height={569}></canvas>
         </section>
       </div>
     </div>

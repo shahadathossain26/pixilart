@@ -1,6 +1,7 @@
 var canvas = document.querySelector("canvas");
 var toolbtns = document.querySelectorAll(".tool");
 var fillColor = document.querySelector("#fill-color");
+var sizeSlider = document.querySelector("#size-slider");
 var ctx = canvas.getContext("2d");
 
 
@@ -15,7 +16,7 @@ window.addEventListener("load", () => {
     canvas.height = canvas.offsetHeight;
 })
 
-startDraw = (e) => {
+var startDraw = (e) => {
     isDrawing = true;
     prevMouseX = e.offsetX;
     prevMouseY = e.offsetY;
@@ -83,3 +84,4 @@ toolbtns.forEach(btn => {
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mouseup", () => isDrawing = false);
+sizeSlider.addEventListener("change", () => brushWidth = sizeSlider.value)
