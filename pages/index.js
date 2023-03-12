@@ -1,27 +1,43 @@
+import Head from "next/head";
 import Image from "next/image";
 
 
 const index = () => {
+  // if (typeof window !== "undefined") {
+  //   const canvas = document.querySelector("canvas");
+  //   window.ctx = canvas.getContext("2d");
+
+
+  // }
+  // const drawing = (e) => {
+  //   ctx.lineTo(e.offsetX, e.offsetY);
+  //   ctx.stroke();
+  // }
+
   return (
     <div className="body">
+      <Head>
+        <title>Pixilart</title>
+        <script src="/script.js" defer></script>
+      </Head>
       <div className="container">
         <section className="tools-board">
           <div className="row">
             <label htmlFor="" className="title">Shapes</label>
 
             <ul className="options">
-              <li className="option">
-                <Image src='/rectangle.svg' width={15} height={15}></Image>
+              <li className="option tool" id="rectangle">
+                <Image src='/rectangle.svg' width={15} height={15} alt='rectangle'></Image>
                 <span>Rectangle</span>
               </li>
 
-              <li className="option">
-                <Image src='/circle.svg' width={15} height={15}></Image>
+              <li className="option tool" id="circle">
+                <Image src='/circle.svg' width={15} height={15} alt='rectangle'></Image>
                 <span>Circle</span>
               </li>
 
-              <li className="option">
-                <Image src='/triangle.svg' width={15} height={15}></Image>
+              <li className="option tool" id="triangle">
+                <Image src='/triangle.svg' width={15} height={15} alt='rectangle'></Image>
                 <span>Triangle</span>
               </li>
 
@@ -36,13 +52,13 @@ const index = () => {
             <label htmlFor="" className="title">Options</label>
 
             <ul className="options">
-              <li className="option active">
-                <Image src='/brush.svg' width={20} height={20}></Image>
+              <li className="option active tool" id="brush">
+                <Image src='/brush.svg' width={20} height={20} alt='rectangle'></Image>
                 <span>Brush</span>
               </li>
 
-              <li className="option">
-                <Image src='/eraser.svg' width={20} height={20}></Image>
+              <li className="option tool" id="eraser">
+                <Image src='/eraser.svg' width={20} height={20} alt='rectangle'></Image>
                 <span>Eraser</span>
               </li>
 
@@ -72,7 +88,10 @@ const index = () => {
 
           </div>
         </section>
-        <section className="drawing-board"></section>
+
+        <section className="drawing-board">
+          <canvas></canvas>
+        </section>
       </div>
     </div>
   );
