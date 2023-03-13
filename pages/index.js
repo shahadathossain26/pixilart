@@ -77,7 +77,7 @@ const index = () => {
               <li className="option"></li>
               <li className="option"></li>
               <li className="option">
-                <input type="color" value='#4A98F7' name="color-picker" id="color-picker" />
+                <input type="color" name="color-picker" id="color-picker" />
               </li>
             </ul>
           </div>

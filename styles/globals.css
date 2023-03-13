@@ -190,24 +190,24 @@ section {
 }
 
 .colors .option:nth-child(1) {
-  background: white;
+  background-color: white;
   border: 1px solid #bfbfbf;
 }
 
 .colors .option:nth-child(2) {
-  background: black;
+  background-color: black;
 }
 
 .colors .option:nth-child(3) {
-  background: red;
+  background-color: red;
 }
 
 .colors .option:nth-child(4) {
-  background: green;
+  background-color: green;
 }
 
 .colors .option:nth-child(5) {
-  background: blue;
+  background-color: blue;
 }
 
 .colors .option.selected:before {
