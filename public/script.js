@@ -4,7 +4,9 @@ var fillColor = document.querySelector("#fill-color");
 var sizeSlider = document.querySelector("#size-slider");
 var colorBtns = document.querySelectorAll(".colors .option");
 var colorPicker = document.querySelector("#color-picker");
-console.log(colorPicker);
+var clearCanvas = document.querySelector(".clear-canvas");
+var saveImage = document.querySelector(".save-img");
+
 var ctx = canvas.getContext("2d");
 
 
@@ -15,9 +17,17 @@ selectedTool = 'brush';
 var prevMouseX, prevMouseY, snapshot;
 selectedColor = "#000"
 
+var canvasBackground = () => {
+    ctx.fillStyle = "#fff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = selectedColor;
+
+}
+
 window.addEventListener("load", () => {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
+    canvas.width = 810;
+    canvas.height = 559;
+    canvasBackground();
 })
 
 var startDraw = (e) => {
@@ -62,7 +72,8 @@ var drawTriangle = (e) => {
 drawing = (e) => {
     if (!isDrawing) return;
     ctx.putImageData(snapshot, 0, 0)
-    if (selectedTool === 'brush') {
+    if (selectedTool === 'brush' || selectedTool === 'eraser') {
+        ctx.strokeStyle = selectedTool === 'eraser' ? "#fff" : selectedColor;
         ctx.lineTo(e.offsetX, e.offsetY);
         ctx.stroke();
     }
@@ -95,6 +106,18 @@ colorBtns.forEach(btn => {
     })
 })
 
+clearCanvas.addEventListener("click", () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    canvasBackground();
+})
+
+saveImage.addEventListener("click", () => {
+    const link = document.createElement("a");
+    link.download = `${Date.now()}.jpg`;
+    link.href = canvas.toDataURL();
+    link.click();
+    console.log("image saved")
+})
 
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("mousedown", startDraw);
@@ -105,3 +128,5 @@ colorPicker.addEventListener("change", () => {
     colorPicker.parentElement.style.background = colorPicker.value;
     colorPicker.parentElement.click();
 })
+
+

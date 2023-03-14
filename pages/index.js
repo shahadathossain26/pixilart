@@ -90,7 +90,7 @@ const index = () => {
         </section>
 
         <section className="drawing-board">
-          <canvas width={810} height={569}></canvas>
+          <canvas></canvas>
         </section>
       </div>
     </div>
