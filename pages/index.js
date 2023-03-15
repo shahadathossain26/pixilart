@@ -1,4 +1,6 @@
 import Banner from "@/components/Banner/Banner";
+import Contribute from "@/components/Contribute/Contribute";
+import Footer from "@/components/Footer/Footer";
 import FuncDetails from "@/components/FuncDetails/FuncDetails";
 import Gallary from "@/components/Gallary/Gallary";
 import Header from "@/components/Header/Header";
@@ -104,7 +106,9 @@ const index = () => {
       </div>
 
       <FuncDetails></FuncDetails>
+      <Contribute></Contribute>
       <Gallary></Gallary>
+      <Footer></Footer>
     </div>
 
 
