@@ -1,4 +1,5 @@
 import Banner from "@/components/Banner/Banner";
+import Header from "@/components/Header/Header";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -17,15 +18,16 @@ const index = () => {
 
   return (
     <div>
+      <Header></Header>
       <Banner></Banner>
 
-      <div className="body">
+      <div className="body z-[1001]">
         <Head>
           <title>Pixilart</title>
           <script src="/script.js" defer></script>
         </Head>
-        <div className="container">
-          <section className="tools-board">
+        <div className="container z-[1001]">
+          <section className="tools-board shadow-xl">
             <div className="row">
               <label htmlFor="" className="title">Shapes</label>
 
@@ -93,7 +95,7 @@ const index = () => {
             </div>
           </section>
 
-          <section className="drawing-board">
+          <section className="drawing-board shadow-xl">
             <canvas></canvas>
           </section>
         </div>
