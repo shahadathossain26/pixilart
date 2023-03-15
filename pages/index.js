@@ -1,4 +1,6 @@
 import Banner from "@/components/Banner/Banner";
+import FuncDetails from "@/components/FuncDetails/FuncDetails";
+import Gallary from "@/components/Gallary/Gallary";
 import Header from "@/components/Header/Header";
 import Head from "next/head";
 import Image from "next/image";
@@ -100,6 +102,9 @@ const index = () => {
           </section>
         </div>
       </div>
+
+      <FuncDetails></FuncDetails>
+      <Gallary></Gallary>
     </div>
 
 
