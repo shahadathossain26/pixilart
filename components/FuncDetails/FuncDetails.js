@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const FuncDetails = () => {
     return (
-        <div className="grid grid-cols-3 gap-4 mx-10 mt-10">
+        <div className="grid grid-cols-3 gap-4 mx-10 mt-10" data-aos="fade-down">
             <div className="card  bg-base-100 ">
                 <div className="card-body">
                     <Image src='/icons/icon1.png' width={120} height={100} className='mx-auto'></Image>

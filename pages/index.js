@@ -29,6 +29,10 @@ const index = () => {
         <Head>
           <title>Pixilart</title>
           <script src="/script.js" defer></script>
+          {/* AOS */}
+          <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
         </Head>
         <div className="container z-[1001]">
           <section className="tools-board shadow-xl">
@@ -109,6 +113,11 @@ const index = () => {
       <Contribute></Contribute>
       <Gallary></Gallary>
       <Footer></Footer>
+
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
     </div>
 
 
